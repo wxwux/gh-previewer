@@ -1,11 +1,18 @@
 import React from "react";
-import ErrorBoundary from "./boundary";
+// import ErrorBoundary from "./boundary";
+import { MainPage } from "./pages";
+import { GlobalStyles, GWrapper, GContainer } from "./App.styles";
 
 const App = () => {
   return (
-    <ErrorBoundary>
-      <h1>Hello World!</h1>
-    </ErrorBoundary>
+    // <ErrorBoundary>
+      <GWrapper>
+        <GContainer>
+          <GlobalStyles />
+          <MainPage />
+        </GContainer>
+      </GWrapper>
+    // </ErrorBoundary>
   );
 };
 

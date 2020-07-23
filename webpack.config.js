@@ -30,16 +30,26 @@ module.exports = (env, argv) => {
     use: ["style-loader", "css-loader", "postcss-loader"],
   };
 
+  const svg = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack']
+  }
+
   const config = {
     entry: "./src/index.js",
     output: {
       path: path.resolve(__dirname, "./docs"),
       filename: "[name].[hash].build.js",
-      chunkFilename: "[chunkhash].js",
+      chunkFilename: "[contenthash].js",
       publicPath: "/",
     },
     module: {
-      rules: [js, html, css],
+      rules: [js, html, css, svg],
+    },
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+      }
     },
     plugins: [
       new HtmlWebPackPlugin({
