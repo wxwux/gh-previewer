@@ -1,24 +1,41 @@
-query Repos($login: String!) {
+fragment DefaultData on Repository {
+  id,
+  name,
+  description,
+  stargazers {
+    totalCount
+  },
+  primaryLanguage {
+    name,
+    color
+  }
+}
+
+query Pinned ($login: String!) {
+  organization(login: $login) {
+    databaseId
+    pinnedItems(first: 6) {
+      nodes {
+        ... on Repository {
+          ...DefaultData
+        }
+      }
+    }
+  }
+}
+
+query Owned ($login: String!) {
   organization(login: $login) {
     databaseId,
     repositories(first: 10) {
       nodes {
-        id
-        name,
-        description,
+        ...DefaultData,
         updatedAt,
-        primaryLanguage {
-          name,
-          color
-        },
         isFork,
         parent {
           name,
           url,
           nameWithOwner
-        },
-        stargazers {
-          totalCount
         },
         forkCount,
         licenseInfo {

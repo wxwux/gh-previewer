@@ -23,7 +23,7 @@ const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache({
     typePolicies: {
-      Organization : {
+      Organization: {
         keyFields: ["databaseId"]
       }
     }

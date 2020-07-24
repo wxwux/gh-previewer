@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from '@apollo/client';
 import { Spacer, Title } from "../../shared.styles";
 import CardList from "@components/CardList";
-import { Repos as ALL_REPOS_QUERY } from "../../queries/repos.gql"
+import { Owned as ALL_REPOS_QUERY } from "../../queries/repos.gql"
 
 const Repos = () => {
   const { data, loading, error } = useQuery(ALL_REPOS_QUERY, {

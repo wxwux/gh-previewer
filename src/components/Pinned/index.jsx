@@ -4,7 +4,7 @@ import { useQuery } from '@apollo/client';
 import { Spacer, Title } from "../../shared.styles"
 import CardList from "@components/CardList";
 
-import { Pinned as PINNED_REPOS_QUERY } from "../../queries/pinned.gql";
+import { Pinned as PINNED_REPOS_QUERY } from "../../queries/repos.gql";
 
 
 const Pinned = () => {
