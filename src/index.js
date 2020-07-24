@@ -10,7 +10,7 @@ const httpLink = createHttpLink({
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = ACCESS_TOKEN 
+  const token = ACCESS_TOKEN
   return {
     headers: {
       ...headers,
@@ -21,7 +21,13 @@ const authLink = setContext((_, { headers }) => {
 
 const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache({
+    typePolicies: {
+      Organization : {
+        keyFields: ["databaseId"]
+      }
+    }
+  })
 })
 
 ReactDOM.render(
