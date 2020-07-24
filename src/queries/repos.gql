@@ -1,0 +1,30 @@
+query Repos($login: String!) {
+  organization(login: $login) {
+    repositories(first: 10) {
+      nodes {
+        id
+        name,
+        description,
+        updatedAt,
+        primaryLanguage {
+          name,
+          color
+        },
+        isFork,
+        parent {
+          name,
+          url,
+          nameWithOwner
+        },
+        stargazers {
+          totalCount
+        },
+        forkCount,
+        licenseInfo {
+          spdxId,
+          key
+        }
+      }
+    }
+  }
+}

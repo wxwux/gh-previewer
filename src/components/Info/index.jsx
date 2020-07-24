@@ -1,14 +1,27 @@
 import React from "react";
+import { useQuery } from '@apollo/client';
+
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
 import { Link } from "../../shared.styles";
 import Icon from "@components/Icon";
 
-const Info = ({ name, avatar, location, link }) => {
+import { Info as ORGANIZATION_INFO_QUERY } from "../../queries/organization.gql";
 
+const Info = () => {
+  const { loading, data, error } = useQuery(ORGANIZATION_INFO_QUERY, {
+    variables: {
+      login: "airbnb"
+    }
+  });
+
+  if (loading) return <div>loading...</div>
+  if (error) return <div>error...</div>
+ 
+  const {avatarUrl, name, location, websiteUrl} = data.organization;
   return (
     <Container>
       <Logo>
-        <img src={avatar} alt={`${name} logo`} />
+        <img src={avatarUrl} alt={`${name} logo`} />
       </Logo>
       <Text>
         <Title>{name}</Title>
@@ -18,7 +31,7 @@ const Info = ({ name, avatar, location, link }) => {
         </Row>
         <Row>
           <Icon symbol="link" />
-          <TextContainer> <Link target="_blank" href={link}>{link}</Link> </TextContainer>
+          <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
         </Row>
       </Text>
     </Container>
