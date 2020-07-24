@@ -5,14 +5,44 @@ query Organization($login: String!) {
     avatarUrl,
     location,
     websiteUrl,
+    repositories(first: 10) {
+      nodes {
+        id
+        name,
+        description,
+        updatedAt,
+        primaryLanguage {
+          name,
+          color
+        },
+        isFork,
+        parent {
+          name,
+          url,
+          nameWithOwner
+        },
+        stargazers {
+          totalCount
+        },
+        forkCount,
+        licenseInfo {
+          spdxId,
+          key
+        }
+      }
+    },
     pinnedItems(first: 6) {
       nodes {
         ... on Repository {
+          id,
           name,
             description,
             primaryLanguage {
               name,
               color
+            },
+            stargazers {
+							totalCount
             }
           }
         }

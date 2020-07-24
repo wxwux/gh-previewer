@@ -3,15 +3,15 @@ import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles"
 import { Link } from "../../shared.styles";
 import Icon from "@components/Icon";
 
-const Info = ({ title, avatar, location, link }) => {
+const Info = ({ name, avatar, location, link }) => {
 
   return (
     <Container>
       <Logo>
-        <img src={avatar} alt={`${title} logo`} />
+        <img src={avatar} alt={`${name} logo`} />
       </Logo>
       <Text>
-        <Title>{title}</Title>
+        <Title>{name}</Title>
         <Row>
           <Icon symbol="location" />
           <TextContainer>{location}</TextContainer>

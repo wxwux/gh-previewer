@@ -13,7 +13,7 @@ export const Container = styled.div`
 `
 
 export const Header = styled.div`
-  margin-bottom: 3px;
+  margin-bottom: 7px;
 `
 
 export const Title = styled.h3`
@@ -30,4 +30,8 @@ export const Description = styled.div`
 export const CardMeta = styled.div`
   margin-top: auto;
   padding-left: 4px;
+`
+
+export const ForkedFrom = styled.div`
+  font-size: 12px
 `

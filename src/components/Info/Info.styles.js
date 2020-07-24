@@ -9,7 +9,6 @@ export const Logo = styled.div`
   width: 100px;
   height: 100px;
   overflow: hidden;
-  border-radius: 50%;
   margin-right: 28px;
 
   img {

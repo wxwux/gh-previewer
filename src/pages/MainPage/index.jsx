@@ -14,6 +14,7 @@ const MainPage = () => {
   });
 
   if (loading) return <div>loading...</div>
+  if (error) return <div>error...</div>
 
   const { organization } = data;
 
@@ -21,20 +22,25 @@ const MainPage = () => {
     <React.Fragment>
       <Spacer>
         <Info
-          title={organization.name}
+          name={organization.name}
           avatar={organization.avatarUrl}
           location={organization.location}
           link={organization.websiteUrl}
         />
       </Spacer>
-      <Spacer>
-        <Title>Pinned Repositories</Title>
-        <CardList items={["", "", ""]} />
-      </Spacer>
+      {organization.pinnedItems.nodes.length > 0 &&
+        <Spacer>
+          <Title>Pinned Repositories</Title>
+          <CardList items={organization.pinnedItems.nodes} />
+        </Spacer>
+      }
       <Spacer>
         <Title no-margin>Repositories</Title>
       </Spacer>
-      <CardList items={["", "", ""]} wide />
+      {
+        organization.repositories.nodes.length > 0 && 
+        <CardList items={organization.repositories.nodes} wide />
+      }
     </React.Fragment>
   )
 }
