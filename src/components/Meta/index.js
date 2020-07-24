@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Figure, Text, Color, List, Item } from "./Meta.styles";
-import { Icon } from "@components";
+import Icon from "@components/Icon";
 
 const Language = () => {
   return (

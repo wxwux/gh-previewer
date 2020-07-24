@@ -5,9 +5,10 @@ export const Container = styled.div`
   align-items: center;
 `
 
+
 export const Figure = styled.div`
   margin-right: 10px;  
-
+   
   svg {
     fill: #697789;
   }

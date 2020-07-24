@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "@components";
+import Card from "@components/Card";
 import { List, ListItem } from "./CardList.styles";
 
 const CardList = ({ items }) => {

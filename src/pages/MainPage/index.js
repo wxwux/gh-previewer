@@ -1,6 +1,7 @@
 import React from "react";
-import { Info, CardList } from "@components";
-import {GSpacer, GTitle} from "../../App.styles";
+import Info from "@components/Info";
+import CardList from "@components/CardList";
+import { GSpacer, GTitle } from "../../App.styles";
 
 const MainPage = () => {
   return (

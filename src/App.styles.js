@@ -51,14 +51,14 @@ export const GlobalStyles = createGlobalStyle`
   }
 }`;
 
-export const GWrapper = styled.div`
+export const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
   min-width: 1100px;
   min-height: 100%;
 `
 
-export const GContainer = styled.div`
+export const Container = styled.div`
   width: 1080px;
   margin: 40px auto;
   background: #fff;
@@ -66,11 +66,11 @@ export const GContainer = styled.div`
   box-shadow: 0 0 5px 0 #EBEBEB;
 `
 
-export const GSpacer = styled.div`
+export const Spacer = styled.div`
   padding: 20px;
 `
 
-export const GLink = styled.a`
+export const Link = styled.a`
   color: #63AAF5;
   text-decoration: none;
   
@@ -79,7 +79,7 @@ export const GLink = styled.a`
   }  
 `;
 
-export const GTitle = styled.h2`
+export const Title = styled.h2`
   margin-top: 0px;
   margin-bottom: 25px;
   font-size: 18px;  

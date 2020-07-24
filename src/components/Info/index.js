@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
 import { GLink } from "../../App.styles";
-import { Icon } from "@components";
+import Icon from "@components/Icon";
 
 const Info = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import {Container, Title, Header, Description, CardMeta} from "./Card.styles"
-import { Meta } from "@components";
+import { Container, Title, Header, Description, CardMeta } from "./Card.styles"
+import Meta from "@components/Meta";
 
 const Card = () => {
   return (
@@ -13,7 +13,7 @@ const Card = () => {
       </Description>
       <CardMeta>
         <Meta />
-      </CardMeta>      
+      </CardMeta>
     </Container>
   )
 }
