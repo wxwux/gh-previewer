@@ -1,8 +1,21 @@
-query Organization {
-    organization(login:"impraise") {
-      id,
-    	avatarUrl,
-    	location,
-    	websiteUrl
+query Organization($login: String!) {
+  organization(login: $login) {
+    id,
+    name,
+    avatarUrl,
+    location,
+    websiteUrl,
+    pinnedItems(first: 6) {
+      nodes {
+        ... on Repository {
+          name,
+            description,
+            primaryLanguage {
+              name,
+              color
+            }
+          }
+        }
     }
+  }
 }

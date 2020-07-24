@@ -1,28 +1,24 @@
 import React from "react";
-import { useQuery } from '@apollo/client';
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
 import { Link } from "../../shared.styles";
 import Icon from "@components/Icon";
-import ORGANIZATION_QUERY from "../../queries/organization.gql";
 
-const Info = () => {
-  const {loading, data, error} = useQuery(ORGANIZATION_QUERY);
- 
-  if (loading) return <div>loading...</div>
+const Info = ({ title, avatar, location, link }) => {
+
   return (
     <Container>
       <Logo>
-        <img src="https://picsum.photos/200/200" alt="organiztion logo" />
+        <img src={avatar} alt={`${title} logo`} />
       </Logo>
       <Text>
-        <Title>Impraise</Title>
+        <Title>{title}</Title>
         <Row>
           <Icon symbol="location" />
-          <TextContainer> Amsterdam / New York / Lisbon </TextContainer>
+          <TextContainer>{location}</TextContainer>
         </Row>
         <Row>
           <Icon symbol="link" />
-          <TextContainer> <Link href="//google.com">https://google.com</Link> </TextContainer>
+          <TextContainer> <Link target="_blank" href={link}>{link}</Link> </TextContainer>
         </Row>
       </Text>
     </Container>
