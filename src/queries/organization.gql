@@ -1,0 +1,8 @@
+query Organization {
+    organization(login:"impraise") {
+      id,
+    	avatarUrl,
+    	location,
+    	websiteUrl
+    }
+}

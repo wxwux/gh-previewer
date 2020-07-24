@@ -2,9 +2,9 @@ import React from "react";
 import { Container, Title, Header, Description, CardMeta } from "./Card.styles"
 import Meta from "@components/Meta";
 
-const Card = () => {
+const Card = ({flat}) => {
   return (
-    <Container>
+    <Container flat={flat}>
       <Header>
         <Title>SpawPoint</Title>
       </Header>
@@ -12,7 +12,7 @@ const Card = () => {
         A starter template for new Rails Project
       </Description>
       <CardMeta>
-        <Meta />
+        <Meta shortened={!flat} />
       </CardMeta>
     </Container>
   )

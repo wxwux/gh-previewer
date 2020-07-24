@@ -7,6 +7,8 @@ auth.json
 .pnp.js
 .idea/
 
+env.json
+
 # testing
 /coverage
 

@@ -9,7 +9,7 @@ module.exports = (env, argv) => {
   process.env.BABEL_ENV = argv.mode;
 
   const js = {
-    test: /\.(js)$/,
+    test: /\.(jsx?)$/,
     exclude: /node_modules/,
     use: {
       loader: "babel-loader",
@@ -35,6 +35,12 @@ module.exports = (env, argv) => {
     use: ['@svgr/webpack']
   }
 
+  const gql = {
+    test: /\.(graphql|gql)$/,
+    exclude: /node_modules/,
+    loader: 'graphql-tag/loader'
+  }
+
   const config = {
     entry: "./src/index.js",
     output: {
@@ -44,12 +50,13 @@ module.exports = (env, argv) => {
       publicPath: "/",
     },
     module: {
-      rules: [js, html, css, svg],
+      rules: [js, html, css, svg, gql],
     },
     resolve: {
       alias: {
         "@components": path.resolve(__dirname, "src/components"),
-      }
+      },
+      extensions: [".js", ".jsx", ".json"]
     },
     plugins: [
       new HtmlWebPackPlugin({

@@ -5,13 +5,13 @@ import Branch from "./icons/branch.svg";
 import Law from "./icons/law.svg";
 import Star from "./icons/star.svg";
 
-const Icon = ({ symbol }) => {
+const Icon = ({ symbol, ...props }) => {
   switch (symbol) {
-    case "location": return <Location />;
-    case "link": return <Link />;
-    case "branch": return <Branch />;
-    case "law": return <Law />;
-    case "star": return <Star />;
+    case "location": return <Location {...props} />;
+    case "link": return <Link {...props} />;
+    case "branch": return <Branch {...props} />;
+    case "law": return <Law {...props} />;
+    case "star": return <Star {...props} />;
     default: return null;
   }
 }

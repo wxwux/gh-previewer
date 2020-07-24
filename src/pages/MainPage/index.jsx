@@ -1,18 +1,22 @@
 import React from "react";
 import Info from "@components/Info";
 import CardList from "@components/CardList";
-import { GSpacer, GTitle } from "../../App.styles";
+import { Spacer, Title } from "../../shared.styles";
 
 const MainPage = () => {
   return (
     <React.Fragment>
-      <GSpacer>
+      <Spacer>
         <Info />
-      </GSpacer>
-      <GSpacer>
-        <GTitle>Pinned Repositories</GTitle>
+      </Spacer>
+      <Spacer>
+        <Title>Pinned Repositories</Title>
         <CardList items={["", "", ""]} />
-      </GSpacer>
+      </Spacer>
+      <Spacer>
+        <Title no-margin>Repositories</Title>
+      </Spacer>
+      <CardList items={["", "", ""]} wide />
     </React.Fragment>
   )
 }

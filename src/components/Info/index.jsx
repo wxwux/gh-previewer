@@ -1,9 +1,14 @@
 import React from "react";
+import { useQuery } from '@apollo/client';
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
-import { GLink } from "../../App.styles";
+import { Link } from "../../shared.styles";
 import Icon from "@components/Icon";
+import ORGANIZATION_QUERY from "../../queries/organization.gql";
 
 const Info = () => {
+  const {loading, data, error} = useQuery(ORGANIZATION_QUERY);
+ 
+  if (loading) return <div>loading...</div>
   return (
     <Container>
       <Logo>
@@ -17,7 +22,7 @@ const Info = () => {
         </Row>
         <Row>
           <Icon symbol="link" />
-          <TextContainer> <GLink href="//google.com">https://google.com</GLink> </TextContainer>
+          <TextContainer> <Link href="//google.com">https://google.com</Link> </TextContainer>
         </Row>
       </Text>
     </Container>

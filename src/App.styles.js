@@ -17,9 +17,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   #root {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-width: 1100px;
+    min-height: 100%;
   }
 
   img {
@@ -51,36 +52,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 }`;
 
-export const Wrapper = styled.div`
-  position: relative;
-  overflow: hidden;
-  min-width: 1100px;
-  min-height: 100%;
-`
-
 export const Container = styled.div`
   width: 1080px;
   margin: 40px auto;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 #EBEBEB;
-`
-
-export const Spacer = styled.div`
-  padding: 20px;
-`
-
-export const Link = styled.a`
-  color: #63AAF5;
-  text-decoration: none;
-  
-  &:hover {
-    text-decoration: underline
-  }  
-`;
-
-export const Title = styled.h2`
-  margin-top: 0px;
-  margin-bottom: 25px;
-  font-size: 18px;  
 `

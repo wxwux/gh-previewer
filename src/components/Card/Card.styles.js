@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  border-radius: 5px;
+  border-radius: ${props => props.flat ? "0px" : "5px"};
   padding: 14px 18px;
-  border: 1px solid #EBEBEB;
+  border-color: #EBEBEB;
+  border-style: solid;
+  border-width: ${props => props.flat ? "0" : "1px"};
+
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -21,6 +24,7 @@ export const Title = styled.h3`
 export const Description = styled.div`
   font-size: 15px;
   color: #30485B;
+  margin-bottom: 18px;
 `
 
 export const CardMeta = styled.div`

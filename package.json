@@ -12,6 +12,9 @@
     "last 1 version"
   ],
   "dependencies": {
+    "@apollo/client": "^3.0.2",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.10.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
