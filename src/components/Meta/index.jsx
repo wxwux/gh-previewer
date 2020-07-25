@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Figure, Text, Color, List, Item } from "./Meta.styles";
 import Icon from "@components/Icon";
-import { convertDate } from "../../libs/date";
+import { convertDate } from "../../libs/dates";
 
 export const Language = ({ name, color }) => {
   return (

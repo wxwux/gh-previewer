@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from '@apollo/client';
+import { FilterContext } from "../../context";
 
 import { Spacer, Title } from "../../shared.styles";
 import CardList from "@components/CardList";
 import Filter from "@components/Filter";
 
-// import { Owned as ALL_REPOS_QUERY } from "../../queries/repos.gql"
+import { buildSearchQuery } from "../../libs/queries";
+
 import { Search as SEARCH_REPOS_QUERY } from "../../queries/repos.gql"
 
 const Repos = () => {
+  const { filter } = useContext(FilterContext);
   const { data, loading, error } = useQuery(SEARCH_REPOS_QUERY, {
     variables: {
       // login: "airbnb"
       // login: "impraise",
-      query: "org:impraise"
+      query: buildSearchQuery(filter)
     }
   });
-  
+
+  console.log('filter', filter);
+
+  // const changeFilter = filterName => {
+  //   setFilter(filterName);
+  // }
+
   if (loading) return <div>loading...</div>
   if (error) return <div>error...</div>
 
