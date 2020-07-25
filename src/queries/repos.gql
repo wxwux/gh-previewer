@@ -27,7 +27,7 @@ query Pinned ($login: String!) {
 query Owned ($login: String!) {
   organization(login: $login) {
     databaseId,
-    repositories(first: 10) {
+    repositories(first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) {
       nodes {
         ...DefaultData,
         updatedAt,

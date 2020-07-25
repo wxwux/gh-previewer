@@ -1,5 +1,4 @@
 import React from "react";
-import { useQuery } from '@apollo/client';
 
 import Info from "@components/Info";
 import Pinned from "@components/Pinned";
