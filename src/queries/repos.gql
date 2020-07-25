@@ -46,3 +46,25 @@ query Owned ($login: String!) {
     }
   }
 }
+
+query Search ($query: String!) {
+  search(first:10, query: $query, type: REPOSITORY) {
+  	nodes {
+      ... on Repository {
+        ...DefaultData,
+        updatedAt,
+        isFork,
+        parent {
+          name,
+          url,
+          nameWithOwner
+        },
+        forkCount,
+        licenseInfo {
+          spdxId,
+          key
+        }
+    	}
+    }
+  }
+}
