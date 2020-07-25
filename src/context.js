@@ -1,10 +1,11 @@
 import React from "react";
 
 export const OrganizationContext = React.createContext({
-  name: "Airbnb"
+  organization: "",
+  setOrganization: () => { }
 });
 
 export const FilterContext = React.createContext({
-  filter : {} ,
-  setFilter: () => {}
+  filter: {},
+  setFilter: () => { }
 });

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Container, Display, Dropdown, List, Item, Button } from "./FilteringBtn.styles";
-import { FilterContext } from "../../context";
+import { FilterContext, OrganizationContext } from "../../context";
 
 const filterTypes = [{
   name: "Sources",
@@ -24,8 +24,6 @@ const filterTypes = [{
   }
 }]
 
-// const filterTypes = ["Sources", "Forks", "Archived", "Mirrors"]
-
 const FilteringList = ({ onFilterChange }) => {
   return (
     <List>
@@ -45,15 +43,14 @@ const FilteringList = ({ onFilterChange }) => {
 const FilteringBtn = () => {
   const [filterName, setFilterName] = useState("");
   const { filter, setFilter } = useContext(FilterContext);
+  const { organization } = useContext(OrganizationContext);
 
   const changeFilter = filter => {
     setFilterName(filter.name);
-    const obj = {
-      org: "impraise",
+    setFilter({
+      org: organization,
       ...filter.query
-    }
-    console.log('obbbj', obj);
-    setFilter(obj)
+    })
   }
 
   const filterTitle = filterName.length ? `: ${filterName}` : "";

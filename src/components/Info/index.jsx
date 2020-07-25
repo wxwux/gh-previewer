@@ -1,23 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useQuery } from '@apollo/client';
 
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
 import { Link } from "../../shared.styles";
 import Icon from "@components/Icon";
 
+import { OrganizationContext } from "../../context";
+
 import { Info as ORGANIZATION_INFO_QUERY } from "../../queries/organization.gql";
 
 const Info = () => {
+  const { organization } = useContext(OrganizationContext);
   const { loading, data, error } = useQuery(ORGANIZATION_INFO_QUERY, {
     variables: {
-      login: "airbnb"
+      login: organization
     }
   });
 
   if (loading) return <div>loading...</div>
   if (error) return <div>error...</div>
- 
-  const {avatarUrl, name, location, websiteUrl} = data.organization;
+
+  const { avatarUrl, name, location, websiteUrl } = data.organization;
   return (
     <Container>
       <Logo>

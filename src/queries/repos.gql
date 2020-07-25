@@ -48,7 +48,7 @@ query Owned ($login: String!) {
 }
 
 query Search ($query: String!) {
-  search(first:100, query: $query, type: REPOSITORY) {
+  search(first: 30, query: $query, type: REPOSITORY) {
   	nodes {
       ... on Repository {
         ...DefaultData,
