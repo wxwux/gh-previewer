@@ -1,6 +1,5 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Container, Display, Dropdown, List, Item, Button, Indicator } from "./FilteringBtn.styles";
-import { FilterContext, OrganizationContext } from "~/context";
 import Icon from "@ui/Icon";
 import { mutations } from "../../../operations/mutations";
 
@@ -52,17 +51,11 @@ const FilteringBtn = () => {
   const [filterName, setFilterName] = useState("");
   const [isOpened, setIsOpened] = useState(false);
 
-  const { setFilter } = useContext(FilterContext);
-  const { organization } = useContext(OrganizationContext);
 
   const changeFilter = filter => {
     setIsOpened(false);
     setFilterName(filter.name);
-    mutations.changeName(filter.name); 
-    // setFilter({
-    //   org: organization,
-    //   ...filter.query
-    // })
+    mutations.setSearchQuery(filter.query);
   }
 
   const filterTitle = filterName.length ? `: ${filterName}` : "";

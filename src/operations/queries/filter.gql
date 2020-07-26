@@ -1,6 +1,3 @@
 query getSearchQuery {
-  query @client {
-    org,
-    query
-  }
+  _query @client 
 }

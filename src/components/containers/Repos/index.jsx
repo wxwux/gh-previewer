@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import { useQuery } from '@apollo/client';
-import { FilterContext } from "~/context";
-
 import { Spacer, Title } from "~/shared.styles";
 import { List, Item } from "./Repos.styles";
 
@@ -9,14 +7,34 @@ import Filter from "@ui/Filter";
 import Card from "@ui/Card";
 import { buildSearchQuery } from "~/libs/queries";
 
-import { Search as SEARCH_REPOS_QUERY } from "~/queries/repos.gql"
+import { Search as SEARCH_REPOS_QUERY } from "~/operations/queries/repos.gql"
 import {
-  getOrganizationName as ORGANIZATION_NAME
+  getOrganizationName as ORGANIZATION_NAME_QUERY
 } from "~/operations/queries/organization.gql";
+import {
+  getSearchQuery as SEARCH_QUERY
+} from "~/operations/queries/filter.gql";
 
-const CardList = ({ items }) => {
+const CardList = () => {
+
+  const { data: searchQueryData } = useQuery(SEARCH_QUERY);
+  const { data: organizationNameData } = useQuery(ORGANIZATION_NAME_QUERY);
+  const { data, loading, error } = useQuery(SEARCH_REPOS_QUERY, {
+    variables: {
+      query: buildSearchQuery({
+        org: organizationNameData["_organizationName"],
+        ...searchQueryData["_query"]
+      })
+    }
+  });
+
+
+  if (loading) return <div>loading...</div>
+  if (error) return <div>error...</div>
+
+  const items = data.search.nodes;
+
   const itemsList = items.map((item) => {
-
     const meta = {
       language: item.primaryLanguage,
       stars: item.stargazers.totalCount,
@@ -49,25 +67,13 @@ const CardList = ({ items }) => {
 }
 
 const Repos = () => {
-  const { filter } = useContext(FilterContext);
-  const { data, loading, error } = useQuery(SEARCH_REPOS_QUERY, {
-    variables: {
-      query: buildSearchQuery(filter)
-    }
-  });
-
-  if (loading) return <div>loading...</div>
-  if (error) return <div>error...</div>
-
-  const items = data.search.nodes;
-
   return (
     <React.Fragment>
       <Spacer spreaded>
         <Title no-margin>Repositories</Title>
         <Filter />
       </Spacer>
-      <CardList items={items} />
+      <CardList />
     </React.Fragment>
   )
 }
