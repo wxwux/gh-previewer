@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useQuery } from '@apollo/client';
 
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";

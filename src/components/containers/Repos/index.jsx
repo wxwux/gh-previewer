@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useQuery } from '@apollo/client';
 import { Spacer, Title } from "~/shared.styles";
 import { List, Item } from "./Repos.styles";
 
-import Filter from "@ui/Filter";
 import Card from "@ui/Card";
+import Filter from "@containers/Filter";
+
 import { buildSearchQuery } from "~/libs/queries";
 
 import { Search as SEARCH_REPOS_QUERY } from "~/operations/queries/repos.gql"
@@ -65,7 +66,6 @@ const CardList = () => {
     <List> {itemsList} </List>
   )
 }
-
 const Repos = () => {
   return (
     <React.Fragment>

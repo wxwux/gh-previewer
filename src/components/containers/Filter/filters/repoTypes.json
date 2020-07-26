@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Sources",
+    "query": {
+      "fork": false
+    }
+  },
+  {
+    "name": "Forks",
+    "query": {
+      "fork": "only"
+    }
+  },
+  {
+    "name": "Archived",
+    "query": {
+      "archived": true
+    }
+  },
+  {
+    "name": "Mirrors",
+    "query": {
+      "mirror": true
+    }
+  }
+]
