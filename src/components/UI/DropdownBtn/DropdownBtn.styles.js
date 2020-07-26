@@ -7,10 +7,10 @@ export const Container = styled.div`
 export const Display = styled.button`
   padding: 6px 10px;
   border: 1px solid;
-  border-color: ${props => props.active ? "transparent" : "#EBEBEB"};
+  border-color: ${props => props.active ? "transparent" : props.theme.borders};
   border-radius: 5px;
   text-align: center;
-  background: ${props => props.active ? "#63A9F3" : "transparent"};
+  background: ${props => props.active ? props.theme.blue : "transparent"};
   font-size: 15px;
   color: ${props => props.active ? "#fff" : "inherit"};
 `
@@ -23,7 +23,7 @@ export const Dropdown = styled.div`
   max-width: 300px;
   min-width: 200px;
   right: 0;
-  box-shadow: 0 0 5px 0 #EBEBEB;
+  box-shadow: 0 0 5px 0 ${props => props.theme.borders};
   background: #fff;
   padding: 10px 0;
   border-radius: 5px;
@@ -54,6 +54,6 @@ export const Button = styled.button`
   justify-content: space-between;
 
   &:hover {
-    background: #F8F8F8;
+    background: ${props => props.theme.hovers};
   }
 `

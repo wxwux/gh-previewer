@@ -1,6 +1,13 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import { normalize } from 'styled-normalize';
 
+export const theme = {
+  borders: "#ebebeb",
+  mainBg: "#f8f8f8",
+  blue: "#63A9F3",
+  hovers: "#f8f8f8"
+}
+
 export const GlobalStyles = createGlobalStyle`
   ${normalize}
 
@@ -12,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font: 16px/1.42 'Lato', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #F8F8F8;
+    background: ${props => props.theme.mainBg};
     color: #2A2928;
   }
 
@@ -61,7 +68,7 @@ export const Container = styled.div`
   margin: 40px auto;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 #EBEBEB;
+  box-shadow: 0 0 5px 0 ${props => props.theme.borders};
 `
 export const Spacer = styled.div`
   padding: 20px;

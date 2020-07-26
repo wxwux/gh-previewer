@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   border-radius: ${props => props.flat ? "0px" : "5px"};
   padding: 14px 18px;
-  border-color: #EBEBEB;
+  border-color: ${props => props.theme.borders};
   border-style: solid;
   border-width: ${props => props.flat ? "0" : "1px"};
 
@@ -11,7 +11,7 @@ export const Container = styled.div`
   flex-direction: column;
   min-height: 100%;
   &:hover {
-    background: #F8F8F8;
+    background: ${props => props.theme.hovers};
   }
 `
 

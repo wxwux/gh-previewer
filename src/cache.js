@@ -1,7 +1,7 @@
 import { InMemoryCache, makeVar } from "@apollo/client";
 
 const initialState = {
-  organization: "airbnb",
+  organization: "",
   searchQuery: {
     fork: true,
   }

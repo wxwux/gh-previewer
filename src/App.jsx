@@ -1,15 +1,18 @@
 import React from "react";
 // import ErrorBoundary from "./pages/ErrorBoundary";
 import MainPage from "./pages/MainPage/index.jsx";
-import { GlobalStyles, Container } from "~/shared.styles";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles, Container, theme } from "~/shared.styles";
 
 const App = () => {
   return (
     // <ErrorBoundary>
-    <Container>
-      <GlobalStyles />
-      <MainPage />
-    </Container>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <GlobalStyles />
+        <MainPage />
+      </Container>
+    </ThemeProvider>
     // </ErrorBoundary>
   );
 };
