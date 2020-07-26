@@ -55,6 +55,7 @@ const Pinned = () => {
   if (error) return <div>error...</div>
 
   const items = data.organization.pinnedItems.nodes
+  if (!items.length) return null;
 
   return (
     <Spacer>

@@ -10,6 +10,9 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  &:hover {
+    background: #F8F8F8;
+  }
 `
 
 export const Header = styled.div`
