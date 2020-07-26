@@ -6,7 +6,7 @@ import Card from "@ui/Card";
 import { Spacer, Title } from "~/shared.styles"
 import { List, Item } from "./Pinned.styles";
 
-import { Pinned as PINNED_REPOS_QUERY } from "~/queries/repos.gql";
+import { Pinned as PINNED_REPOS_QUERY } from "~/operations/queries/repos.gql";
 
 import { OrganizationContext } from "~/context";
 

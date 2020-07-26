@@ -1,0 +1,4 @@
+query Organization {
+  name @client
+}
+

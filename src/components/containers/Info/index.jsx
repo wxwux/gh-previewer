@@ -7,7 +7,7 @@ import Icon from "@ui/Icon";
 
 import { OrganizationContext } from "~/context";
 
-import { Info as ORGANIZATION_INFO_QUERY } from "~/queries/organization.gql";
+import { Info as ORGANIZATION_INFO_QUERY } from "~/operations/queries/organization.gql";
 
 const Info = () => {
   const { organization } = useContext(OrganizationContext);

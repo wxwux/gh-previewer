@@ -19,16 +19,24 @@ const authLink = setContext((_, { headers }) => {
   }
 });
 
+const cache = new InMemoryCache({
+  typePolicies: {
+    Organization: {
+      keyFields: ["databaseId"]
+    }
+  }
+})
+
+const initialState = {
+  organization: "impraise"
+}
+
+
 const apolloClient = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache({
-    typePolicies: {
-      Organization: {
-        keyFields: ["databaseId"]
-      }
-    }
-  })
+  cache
 })
+
 
 ReactDOM.render(
   <ApolloProvider client={apolloClient}>
