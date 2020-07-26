@@ -8,13 +8,11 @@ import Pinned from "@containers/Pinned";
 import { Spacer } from "~/shared.styles";
 import Repos from "@containers/Repos";
 
-import { getOrganizationName as ORG_NAME_QUERY } from "../../operations/queries/filter.gql";
+import { getOrganizationName as ORG_NAME_QUERY } from "../../operations/queries/organization.gql";
 
 const MainPage = () => {
   const [organization, setOrganization] = useState("airbnb");
-  const {data} = useQuery(ORG_NAME_QUERY);
-
-  console.log('dada', data);
+  const { data } = useQuery(ORG_NAME_QUERY);
 
   const [filter, setFilter] = useState({
     org: organization,
@@ -22,17 +20,17 @@ const MainPage = () => {
     sort: "updated-desc"
   });
 
+  console.log('filter-data', data);
+
   return (
     <React.Fragment>
-      <OrganizationContext.Provider value={{ organization, setOrganization }}>
-        <Spacer>
-          <Info />
-        </Spacer>
-        <Pinned />
-        <FilterContext.Provider value={{ filter, setFilter }}>
-          {/* <Repos /> */}
-        </FilterContext.Provider>
-      </OrganizationContext.Provider>
+      <Spacer>
+        <Info />
+      </Spacer>
+      <Pinned />
+      <FilterContext.Provider value={{ filter, setFilter }}>
+        <Repos />
+      </FilterContext.Provider>
     </React.Fragment>
   )
 }

@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Container, Display, Dropdown, List, Item, Button, Indicator } from "./FilteringBtn.styles";
 import { FilterContext, OrganizationContext } from "~/context";
 import Icon from "@ui/Icon";
+import { mutations } from "../../../operations/mutations";
 
 const filterTypes = [{
   name: "Sources",
@@ -57,10 +58,11 @@ const FilteringBtn = () => {
   const changeFilter = filter => {
     setIsOpened(false);
     setFilterName(filter.name);
-    setFilter({
-      org: organization,
-      ...filter.query
-    })
+    mutations.changeName(filter.name); 
+    // setFilter({
+    //   org: organization,
+    //   ...filter.query
+    // })
   }
 
   const filterTitle = filterName.length ? `: ${filterName}` : "";

@@ -10,6 +10,9 @@ import Card from "@ui/Card";
 import { buildSearchQuery } from "~/libs/queries";
 
 import { Search as SEARCH_REPOS_QUERY } from "~/queries/repos.gql"
+import {
+  getOrganizationName as ORGANIZATION_NAME
+} from "~/operations/queries/organization.gql";
 
 const CardList = ({ items }) => {
   const itemsList = items.map((item) => {
