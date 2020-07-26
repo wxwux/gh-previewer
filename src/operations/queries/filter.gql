@@ -1,4 +1,4 @@
-query Organization {
+query getOrganizationName {
   name @client
 }
 

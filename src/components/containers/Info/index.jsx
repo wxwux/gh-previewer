@@ -20,6 +20,8 @@ const Info = () => {
   if (loading) return <div>loading...</div>
   if (error) return <div>error...</div>
 
+  console.log('data', data);
+
   const { avatarUrl, name, location, websiteUrl } = data.organization;
   return (
     <Container>
