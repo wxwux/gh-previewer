@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { useQuery } from '@apollo/client';
 
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
-import { Link } from "../../shared.styles";
-import Icon from "@components/Icon";
+import { Link } from "~/shared.styles";
+import Icon from "@ui/Icon";
 
-import { OrganizationContext } from "../../context";
+import { OrganizationContext } from "~/context";
 
-import { Info as ORGANIZATION_INFO_QUERY } from "../../queries/organization.gql";
+import { Info as ORGANIZATION_INFO_QUERY } from "~/queries/organization.gql";
 
 const Info = () => {
   const { organization } = useContext(OrganizationContext);

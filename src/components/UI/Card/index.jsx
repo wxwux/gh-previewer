@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Title, Header, Description, CardMeta, ForkedFrom } from "./Card.styles"
-import Meta from "@components/Meta";
-import { Link } from "../../shared.styles";
+import Meta from "@ui/Meta";
+import { Link } from "~/shared.styles";
 
 const Card = ({ flat, name, description, meta, fork }) => {
   return (

@@ -54,7 +54,9 @@ module.exports = (env, argv) => {
     },
     resolve: {
       alias: {
-        "@components": path.resolve(__dirname, "src/components"),
+        "@ui": path.resolve(__dirname, "src/components/UI"),
+        "@containers": path.resolve(__dirname, "src/components/containers"),
+        "~": path.resolve(__dirname, "src")
       },
       extensions: [".js", ".jsx", ".json"]
     },

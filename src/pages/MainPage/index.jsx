@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-import { FilterContext, OrganizationContext } from "../../context";
+import { FilterContext, OrganizationContext } from "~/context";
 
-import Info from "@components/Info";
-import Pinned from "@components/Pinned";
-import { Spacer } from "../../shared.styles";
-import Repos from "@components/Repos";
+import Info from "@containers/Info";
+import Pinned from "@containers/Pinned";
+import { Spacer } from "~/shared.styles";
+import Repos from "@containers/Repos";
 
 const MainPage = () => {
   const [organization, setOrganization] = useState("airbnb");
@@ -15,7 +15,6 @@ const MainPage = () => {
     fork: true,
     sort: "updated-desc"
   });
-
 
   return (
     <React.Fragment>

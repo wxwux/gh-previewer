@@ -1,5 +1,5 @@
 import React from "react";
-import FilteringBtn from "@components/FilteringBtn";
+import FilteringBtn from "@ui/FilteringBtn";
 import { Container, Item, Title } from "./Filter.styles";
 
 const Filter = ({onFilterChange}) => {
