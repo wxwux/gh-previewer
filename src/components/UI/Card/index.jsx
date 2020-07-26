@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Title, Header, Description, CardMeta, ForkedFrom } from "./Card.styles"
-import Meta from "@ui/Meta";
 import { Link } from "~/shared.styles";
 
 const Card = ({ flat, name, description, meta, fork }) => {
@@ -8,21 +7,12 @@ const Card = ({ flat, name, description, meta, fork }) => {
     <Container flat={flat}>
       <Header>
         <Title>{name}</Title>
-        {
-          (flat && fork.isFork) &&
-          <ForkedFrom>Forked from <Link target="_blank" href={fork.parent.url}>{fork.parent.nameWithOwner}</Link> </ForkedFrom>
+        {fork &&
+          <ForkedFrom>Forked from <Link target="_blank" href={fork.url}>{fork.nameWithOwner}</Link> </ForkedFrom>
         }
       </Header>
       <Description>{description}</Description>
-      <CardMeta>
-        <Meta
-          shortened={!flat}
-          language={meta.language}
-          stars={meta.stars}
-          license={meta.license}
-          updatedAt={meta.updatedAt}
-        />
-      </CardMeta>
+      <CardMeta>{meta}</CardMeta>
     </Container>
   )
 }

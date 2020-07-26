@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useQuery } from '@apollo/client';
 
 import Card from "@ui/Card";
+import Meta from "@ui/Meta";
 
 import { Spacer, Title } from "~/shared.styles"
 import { List, Item } from "./Pinned.styles";
@@ -14,24 +15,17 @@ import {
 
 const CardList = ({ items }) => {
   const itemsList = items.map((item) => {
-
-    const meta = {
-      language: item.primaryLanguage,
-      stars: item.stargazers.totalCount,
-    }
-
-    const fork = {
-      isFork : item.isFork,
-      parent: item.parent
-    }
-
     return (
       <Item key={item.id}>
         <Card
           name={item.name}
           description={item.description}
-          fork={fork}
-          meta={meta}
+          meta={
+            <Meta
+              language={item.primaryLanguage}
+              stars={item.stargazers.totalCount}
+            />
+          }
         />
       </Item>
     )

@@ -1,61 +1,13 @@
 import React from "react";
-import { Container, Figure, Text, Color, List, Item } from "./Meta.styles";
-import Icon from "@ui/Icon";
-import { convertDate } from "~/libs/dates";
+import { List, Item } from "./Meta.styles";
 
-export const Language = ({ name, color }) => {
-  return (
-    <Container>
-      <Figure>
-        <Color color={color} />
-      </Figure>
-      <Text>{name}</Text>
-    </Container>
-  )
-}
+import Language from "./types/Language";
+import Stars from "./types/Stars";
+import Forks from "./types/Forks";
+import License from "./types/License";
+import UpdatedAt from "./types/UpdatedAt";
 
-export const Stars = ({ stars }) => {
-  return (
-    <Container>
-      <Figure>
-        <Icon symbol="star" />
-      </Figure>
-      <Text>{stars}</Text>
-    </Container>
-  )
-}
-
-const Forks = ({ forks }) => {
-  return (
-    <Container>
-      <Figure>
-        <Icon symbol="branch" />
-      </Figure>
-      <Text>{forks}</Text>
-    </Container>
-  )
-}
-
-const License = ({ license }) => {
-  return (
-    <Container>
-      <Figure>
-        <Icon symbol="law" />
-      </Figure>
-      <Text>{license}</Text>
-    </Container>
-  )
-}
-
-const UpdatedOn = ({date}) => {
-  return (
-    <Container>
-      <Text>Updated on {date}</Text>
-    </Container>
-  )
-}
-
-const Meta = ({ shortened, language, stars, forks, license, updatedAt }) => {
+const Meta = ({ language, stars, forks, license, updatedAt }) => {
   return (
     <List>
       {language && language.name.length > 0 &&
@@ -66,28 +18,29 @@ const Meta = ({ shortened, language, stars, forks, license, updatedAt }) => {
           />
         </Item>
       }
-      {stars > 0 &&
+
+      {stars && stars > 0 &&
         <Item>
           <Stars stars={stars} />
         </Item>
       }
 
-      {Boolean(shortened) === false &&
-        <React.Fragment>
-          {forks > 0 &&
-            <Item>
-              <Forks forks={forks} />
-            </Item>
-          }
-          {license && license.length > 0 &&
-            <Item>
-              <License license={license} />
-            </Item>
-          }
-          <Item>
-            <UpdatedOn date={convertDate(updatedAt)} />
-          </Item>
-        </React.Fragment>
+      {forks && forks > 0 &&
+        <Item>
+          <Forks forks={forks} />
+        </Item>
+      }
+
+      {license && license.length > 0 &&
+        <Item>
+          <License license={license} />
+        </Item>
+      }
+
+      {updatedAt && updatedAt.length &&
+        <Item>
+          <UpdatedAt date={updatedAt} />
+        </Item>
       }
     </List>
   )
