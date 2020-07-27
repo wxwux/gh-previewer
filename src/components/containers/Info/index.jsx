@@ -19,7 +19,7 @@ const Info = () => {
   });
 
   if (loading) return <div>loading...</div>
-  if (error) return <div>error...</div>
+  if (error) return <div>{error.message}</div>
 
   const { avatarUrl, name, location, websiteUrl } = data.organization;
   return (
@@ -30,14 +30,19 @@ const Info = () => {
         </Logo>
         <Text>
           <Title>{name}</Title>
-          <Row>
-            <Icon symbol="location" />
-            <TextContainer>{location}</TextContainer>
-          </Row>
-          <Row>
-            <Icon symbol="link" />
-            <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
-          </Row>
+          {location.length > 0 && (
+            <Row>
+              <Icon symbol="location" />
+              <TextContainer>{location}</TextContainer>
+            </Row>
+          )}
+
+          {location.length > 0 && (
+            <Row>
+              <Icon symbol="link" />
+              <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
+            </Row>
+          )}
         </Text>
       </Container>
     </Spacer>

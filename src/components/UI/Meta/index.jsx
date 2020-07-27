@@ -19,25 +19,25 @@ const Meta = ({ language, stars, forks, license, updatedAt }) => {
         </Item>
       }
 
-      {stars && stars > 0 &&
+      {stars > 0 &&
         <Item>
           <Stars stars={stars} />
         </Item>
       }
-
-      {forks && forks > 0 &&
+      
+      {forks > 0 &&
         <Item>
           <Forks forks={forks} />
         </Item>
       }
 
-      {license && license.length > 0 &&
+      {(license && license.length > 0) &&
         <Item>
           <License license={license} />
         </Item>
       }
 
-      {updatedAt && updatedAt.length &&
+      {(updatedAt && updatedAt.length) &&
         <Item>
           <UpdatedAt date={updatedAt} />
         </Item>
