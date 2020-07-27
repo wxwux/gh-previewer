@@ -6,9 +6,10 @@
     [
       "babel-plugin-styled-components",
       {
-        "displayName": true,
+        "displayName": false,
         "pure": true,
-        "minify": true
+        "minify": true,
+        "transpileTemplateLiterals": true
       }
     ]
   ]
