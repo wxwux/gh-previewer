@@ -23,7 +23,7 @@ const MainPage = () => {
         login: title
       }
     });
-    mutations.changeName(title)
+    mutations.setOrganizationName(title)
   }
 
   if (loading) return <Spacer>loading...</Spacer>

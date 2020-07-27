@@ -1,8 +1,8 @@
-import changeName from "./changeName";
+import setOrganizationName from "./setOrganizationName";
 import setSearchQuery from "./setSearchQuery";
 import { organizationVar, searchQueryVar } from "../../cache";
 
 export const mutations = {
-  changeName: changeName(organizationVar),
+  setOrganizationName: setOrganizationName(organizationVar),
   setSearchQuery: setSearchQuery(searchQueryVar)
 }
