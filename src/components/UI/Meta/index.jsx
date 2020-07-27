@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { List, Item } from "./Meta.styles";
 
 import Language from "./types/Language";
@@ -24,7 +25,7 @@ const Meta = ({ language, stars, forks, license, updatedAt }) => {
           <Stars stars={stars} />
         </Item>
       }
-      
+
       {forks > 0 &&
         <Item>
           <Forks forks={forks} />
@@ -44,6 +45,17 @@ const Meta = ({ language, stars, forks, license, updatedAt }) => {
       }
     </List>
   )
+}
+
+Meta.propTypes = {
+  language: PropTypes.shape({
+    name: PropTypes.string,
+    color: PropTypes.string
+  }),
+  stars: PropTypes.number,
+  forms: PropTypes.number,
+  license: PropTypes.string,
+  updatedAt: PropTypes.string
 }
 
 export default Meta;

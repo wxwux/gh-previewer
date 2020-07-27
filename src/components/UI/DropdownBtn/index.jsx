@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Container, Display, Dropdown, List, Item, Button, Indicator } from "./DropdownBtn.styles";
 import Icon from "@ui/Icon";
 
@@ -49,6 +50,15 @@ const DropdownBtn = ({ list, title, onChange }) => {
       }
     </Container>
   )
+}
+
+DropdownBtn.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    query: PropTypes.object
+  })),
+  title: PropTypes.string,
+  onChange: PropTypes.func
 }
 
 export default DropdownBtn;

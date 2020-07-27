@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Container, Title, Header, Description, CardMeta, ForkedFrom } from "./Card.styles"
 import { Link } from "~/shared.styles";
 
@@ -15,6 +16,17 @@ const Card = ({ flat, name, description, meta, fork }) => {
       <CardMeta>{meta}</CardMeta>
     </Container>
   )
+}
+
+Card.propTypes = {
+  flat: PropTypes.bool,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  meta: PropTypes.element,
+  fork: PropTypes.shape({
+    url: PropTypes.string,
+    nameWithOwner: PropTypes.string
+  })
 }
 
 export default Card;

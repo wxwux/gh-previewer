@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Location from "./icons/location.svg";
 import Link from "./icons/link.svg";
 import Branch from "./icons/branch.svg";
@@ -18,5 +19,8 @@ const Icon = ({ symbol, ...props }) => {
   }
 }
 
+Icon.propTypes = {
+  symbol: PropTypes.string
+}
 
 export default Icon;

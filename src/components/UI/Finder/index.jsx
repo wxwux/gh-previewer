@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Container, Form, Input, Button } from "./Finder.styles";
 
 const Finder = ({ onSubmit }) => {
@@ -20,6 +21,10 @@ const Finder = ({ onSubmit }) => {
       </Form>
     </Container>
   )
+}
+
+Finder.propTypes = {
+  onSubmit: PropTypes.func
 }
 
 export default Finder;
