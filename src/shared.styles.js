@@ -75,6 +75,7 @@ export const Spacer = styled.div`
   display: ${props => props.spreaded ? "flex" : "block"};
   align-items: center;
   justify-content: space-between;
+  text-align: ${props => props.centered ? "center" : "left"};
 `
 
 export const Link = styled.a`
