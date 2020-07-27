@@ -32,7 +32,7 @@ const CardList = ({ items }) => {
   });
 
   return (
-    <List> {itemsList} </List>
+    <List data-cy-id="pinned-list"> {itemsList} </List>
   )
 }
 
@@ -53,7 +53,7 @@ const Pinned = () => {
 
   return (
     <Spacer>
-      <Title>Pinned Repositories</Title>
+      <Title data-cy-id="pinned-title">Pinned Repositories</Title>
       <CardList items={items} />
     </Spacer>
   )

@@ -15,8 +15,8 @@ const Finder = ({ onSubmit }) => {
   return (
     <Container>
       <Form onSubmit={submitHandler}>
-        <Input value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter the name" />
-        <Button>Send!</Button>
+        <Input data-cy-id="finder-input" value={title} onChange={e => setTitle(e.target.value)} type="text" placeholder="Enter the name" />
+        <Button data-cy-id="finder-btn">Send!</Button>
       </Form>
     </Container>
   )

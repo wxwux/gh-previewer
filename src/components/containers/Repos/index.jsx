@@ -63,7 +63,7 @@ const ReposList = () => {
   });
 
   return (
-    <List> {itemsList} </List>
+    <List data-cy-id="repos-list"> {itemsList} </List>
   )
 }
 const Repos = () => {

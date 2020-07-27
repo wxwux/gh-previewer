@@ -26,21 +26,21 @@ const Info = () => {
     <Spacer>
       <Container>
         <Logo>
-          <img src={avatarUrl} alt={`${name} logo`} />
+          <img data-cy-id="org-avatar" src={avatarUrl} alt={`${name} logo`} />
         </Logo>
         <Text>
-          <Title>{name}</Title>
+          <Title data-cy-id="org-name">{name}</Title>
           {location.length > 0 && (
             <Row>
               <Icon symbol="location" />
-              <TextContainer>{location}</TextContainer>
+              <TextContainer data-cy-id="org-location">{location}</TextContainer>
             </Row>
           )}
 
           {location.length > 0 && (
             <Row>
               <Icon symbol="link" />
-              <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
+              <TextContainer > <Link target="_blank" data-cy-id="org-url" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
             </Row>
           )}
         </Text>

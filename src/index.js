@@ -1,10 +1,13 @@
+import 'unfetch/polyfill';
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App.jsx";
 import { ApolloClient, createHttpLink, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { ACCESS_TOKEN } from "../env.json";
 import cache from "./cache";
+
+
+import App from "./App.jsx";
 
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql',

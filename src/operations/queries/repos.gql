@@ -24,29 +24,6 @@ query Pinned ($login: String!) {
   }
 }
 
-query Owned ($login: String!) {
-  organization(login: $login) {
-    databaseId,
-    repositories(first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) {
-      nodes {
-        ...DefaultData,
-        updatedAt,
-        isFork,
-        parent {
-          name,
-          url,
-          nameWithOwner
-        },
-        forkCount,
-        licenseInfo {
-          spdxId,
-          key
-        }
-      }
-    }
-  }
-}
-
 query Search ($query: String!) {
   search(first: 30, query: $query, type: REPOSITORY) {
   	nodes {
@@ -54,6 +31,8 @@ query Search ($query: String!) {
         ...DefaultData,
         updatedAt,
         isFork,
+        isArchived,
+        isMirror,
         parent {
           name,
           url,

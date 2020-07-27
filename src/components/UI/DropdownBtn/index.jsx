@@ -8,7 +8,7 @@ const DropList = ({ list, onItemChange, currentItem }) => {
       {
         list.map(item => {
           return (
-            <Item active={item.name === currentItem} key={item.name}>
+            <Item data-cy-id={item.name} active={item.name === currentItem} key={item.name}>
               <Button onClick={() => onItemChange(item)}>
                 {item.name}
                 <Indicator>
@@ -37,9 +37,9 @@ const DropdownBtn = ({ list, title, onChange }) => {
 
   return (
     <Container>
-      <Display active={isOpened} onClick={() => setIsOpened(true)}>{title}{btnDisplayedTitle}</Display>
+      <Display data-cy-id="filtering-btn" active={isOpened} onClick={() => setIsOpened(true)}>{title}{btnDisplayedTitle}</Display>
       {isOpened &&
-        <Dropdown>
+        <Dropdown data-cy-id="filtering-list">
           <DropList
             list={list}
             onItemChange={item => changeItem(item)}

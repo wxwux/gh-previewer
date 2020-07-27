@@ -32,7 +32,7 @@ const MainPage = () => {
     <React.Fragment>
       {(!data || error) &&
         <React.Fragment>
-          {error && <p>{parseQLError(error).notFound()}</p>}
+          {error && <p data-cy-id="error-message">{parseQLError(error).notFound()}</p>}
           <Finder onSubmit={title => getData(title)} />
         </React.Fragment>
       }
