@@ -4,19 +4,17 @@ import { Container, Item, Title } from "./Filter.styles";
 import { mutations } from "~/operations/mutations";
 import repoFilterTypes from "./filters/repoTypes.json";
 
-const Filter = () => {
-  return (
-    <Container>
-      <Title>Filter</Title>
-      <Item>
-        <DropdownBtn
-          title="Type"
-          list={repoFilterTypes}
-          onChange={item => mutations.setSearchQuery(item.query)}
-        />
-      </Item>
-    </Container>
-  )
-}
+const Filter = () => (
+  <Container>
+    <Title>Filter</Title>
+    <Item>
+      <DropdownBtn
+        title="Type"
+        list={repoFilterTypes}
+        onChange={(item) => mutations.setSearchQuery(item.query)}
+      />
+    </Item>
+  </Container>
+);
 
 export default Filter;

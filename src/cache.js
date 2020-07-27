@@ -4,8 +4,8 @@ const initialState = {
   organization: "",
   searchQuery: {
     fork: true,
-  }
-}
+  },
+};
 
 export const organizationVar = makeVar(initialState.organization);
 export const searchQueryVar = makeVar(initialState.searchQuery);
@@ -15,18 +15,17 @@ const cache = new InMemoryCache({
     Query: {
       fields: {
         _organizationName: {
-          read: () => organizationVar()
+          read: () => organizationVar(),
         },
         _query: {
-          read: () => searchQueryVar()
-        }
-      }
+          read: () => searchQueryVar(),
+        },
+      },
     },
     Organization: {
-      keyFields: ["databaseId"]
-    }
-  }
+      keyFields: ["databaseId"],
+    },
+  },
 });
-
 
 export default cache;

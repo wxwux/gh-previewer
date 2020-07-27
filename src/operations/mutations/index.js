@@ -4,5 +4,5 @@ import { organizationVar, searchQueryVar } from "../../cache";
 
 export const mutations = {
   setOrganizationName: setOrganizationName(organizationVar),
-  setSearchQuery: setSearchQuery(searchQueryVar)
-}
+  setSearchQuery: setSearchQuery(searchQueryVar),
+};

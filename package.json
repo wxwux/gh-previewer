@@ -13,15 +13,11 @@
   ],
   "dependencies": {
     "@apollo/client": "^3.0.2",
-    "cypress": "^4.11.0",
     "graphql": "^15.3.0",
-    "graphql-tag": "^2.10.4",
-    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
-    "styled-normalize": "^8.0.7",
-    "unfetch": "^4.1.0"
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -36,16 +32,18 @@
     "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
+    "cypress": "^4.11.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "6.x",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-import": "2.x",
-    "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-react": "7.x",
-    "eslint-plugin-react-hooks": "2.x",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.4",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "jest": "^26.1.0",
@@ -60,7 +58,7 @@
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2",
-    "whatwg-fetch": "^3.2.0"
+    "unfetch": "^4.1.0"
   },
   "resolutions": {
     "styled-components": "^5"

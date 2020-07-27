@@ -1,12 +1,12 @@
-import styled, { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
+import styled, { createGlobalStyle } from "styled-components";
+import { normalize } from "styled-normalize";
 
 export const theme = {
   borders: "#ebebeb",
   mainBg: "#f8f8f8",
   blue: "#63A9F3",
-  hovers: "#f8f8f8"
-}
+  hovers: "#f8f8f8",
+};
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize}
@@ -19,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font: 16px/1.42 'Lato', Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: ${props => props.theme.mainBg};
+    background: ${(props) => props.theme.mainBg};
     color: #2A2928;
   }
 
@@ -68,15 +68,15 @@ export const Container = styled.div`
   margin: 40px auto 100px;
   background: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px 0 ${props => props.theme.borders};
-`
+  box-shadow: 0 0 5px 0 ${(props) => props.theme.borders};
+`;
 export const Spacer = styled.div`
   padding: 20px;
-  display: ${props => props.spreaded ? "flex" : "block"};
+  display: ${(props) => (props.spreaded ? "flex" : "block")};
   align-items: center;
   justify-content: space-between;
-  text-align: ${props => props.centered ? "center" : "left"};
-`
+  text-align: ${(props) => (props.centered ? "center" : "left")};
+`;
 
 export const Link = styled.a`
   color: #63AAF5;
@@ -89,6 +89,6 @@ export const Link = styled.a`
 
 export const Title = styled.h2`
   margin-top: 0px;
-  margin-bottom: ${props => props["no-margin"] ? 0 : "25px"};
+  margin-bottom: ${(props) => (props["no-margin"] ? 0 : "25px")};
   font-size: 18px;  
-`
+`;

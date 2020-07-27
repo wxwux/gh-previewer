@@ -9,11 +9,11 @@ module.exports = (env, argv) => {
   process.env.BABEL_ENV = argv.mode;
 
   const jsLint = {
-    enforce: 'pre',
+    enforce: "pre",
     test: /\.jsx?$/,
     exclude: /node_modules/,
-    loader: 'eslint-loader',
-  }
+    loader: "eslint-loader",
+  };
 
   const js = {
     test: /\.(jsx?)$/,
@@ -34,14 +34,14 @@ module.exports = (env, argv) => {
 
   const svg = {
     test: /\.svg$/,
-    use: ['@svgr/webpack']
-  }
+    use: ["@svgr/webpack"],
+  };
 
   const gql = {
     test: /\.(graphql|gql)$/,
     exclude: /node_modules/,
-    loader: 'graphql-tag/loader'
-  }
+    loader: "graphql-tag/loader",
+  };
 
   const config = {
     entry: "./src/index.js",
@@ -58,9 +58,9 @@ module.exports = (env, argv) => {
       alias: {
         "@ui": path.resolve(__dirname, "src/components/UI"),
         "@containers": path.resolve(__dirname, "src/components/containers"),
-        "~": path.resolve(__dirname, "src")
+        "~": path.resolve(__dirname, "src"),
       },
-      extensions: [".js", ".jsx", ".json"]
+      extensions: [".js", ".jsx", ".json"],
     },
     plugins: [
       new HtmlWebPackPlugin({

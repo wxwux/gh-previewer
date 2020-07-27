@@ -1,6 +1,6 @@
-import DropdownBtn from "./index.jsx";
-import { shallow } from 'enzyme';
+import { shallow } from "enzyme";
 import React from "react";
+import DropdownBtn from "./index.jsx";
 
 it("shows dropdown when titled button was clicked", () => {
   const wrapper = shallow(<DropdownBtn />);

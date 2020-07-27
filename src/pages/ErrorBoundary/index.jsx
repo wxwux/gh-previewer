@@ -9,13 +9,14 @@ class ErrorBoundary extends React.Component {
   static getDerivedStateFromError() {
     return { hasError: true };
   }
-  
+
   render() {
     if (this.state.hasError) {
       return (
         <>
           <h1>Unknown error has occured</h1>
-          <h2>task failed successfully</h2>;
+          <h2>task failed successfully</h2>
+          ;
         </>
       );
     }

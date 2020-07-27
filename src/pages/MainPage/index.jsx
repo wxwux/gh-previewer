@@ -1,6 +1,7 @@
 import React, { Suspense } from "react";
 
 import Finder from "@ui/Finder";
+import { useLazyQuery } from "@apollo/client";
 import { Spacer } from "~/shared.styles";
 
 import { mutations } from "~/operations/mutations";
@@ -10,37 +11,36 @@ import {
   Info as ORGANIZATION_INFO_QUERY,
 } from "~/operations/queries/organization.gql";
 
-import { useLazyQuery } from '@apollo/client';
-
-const MainPageContainer = React.lazy(() => import('@containers/MainPageContainer'));
+const MainPageContainer = React.lazy(() => import("@containers/MainPageContainer"));
 
 const MainPage = () => {
   const [getOrgInfo, { loading, data, error }] = useLazyQuery(ORGANIZATION_INFO_QUERY);
 
-  const getData = title => {
+  const getData = (title) => {
     getOrgInfo({
       variables: {
-        login: title
-      }
+        login: title,
+      },
     });
-    mutations.setOrganizationName(title)
-  }
+    mutations.setOrganizationName(title);
+  };
 
-  if (loading) return <Spacer>loading...</Spacer>
+  if (loading) return <Spacer>loading...</Spacer>;
 
   return (
-    <React.Fragment>
-      {(!data || error) &&
-        <React.Fragment>
+    <>
+      {(!data || error)
+        && (
+        <>
           {error && <Spacer centered data-cy-id="error-message">{parseQLError(error).notFound()}</Spacer>}
-          <Finder onSubmit={title => getData(title)} />
-        </React.Fragment>
-      }
+          <Finder onSubmit={(title) => getData(title)} />
+        </>
+        )}
       <Suspense fallback={<Spacer>Module is loading...</Spacer>}>
         {data && <MainPageContainer />}
       </Suspense>
-    </React.Fragment>
-  )
-}
+    </>
+  );
+};
 
 export default MainPage;

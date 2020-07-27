@@ -3,10 +3,10 @@ import { buildSearchQuery } from "../queries";
 it("generates github search query from an object", () => {
   const obj = {
     org: "impraise",
-    fork: "true"
-  }
+    fork: "true",
+  };
 
-  const result = "org:impraise fork:true"
+  const result = "org:impraise fork:true";
   expect(buildSearchQuery(obj)).toEqual(result);
 });
 

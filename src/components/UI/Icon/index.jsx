@@ -17,10 +17,10 @@ const Icon = ({ symbol, ...props }) => {
     case "check": return <Check viewBox="0 0 24 24" {...props} />;
     default: return null;
   }
-}
+};
 
 Icon.propTypes = {
-  symbol: PropTypes.string
-}
+  symbol: PropTypes.string,
+};
 
 export default Icon;

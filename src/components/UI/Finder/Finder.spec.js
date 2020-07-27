@@ -1,6 +1,6 @@
-import Finder from "./index.jsx";
-import { shallow } from 'enzyme';
+import { shallow } from "enzyme";
 import React from "react";
+import Finder from "./index.jsx";
 
 it("finder matches snapshot", () => {
   const wrapper = shallow(<Finder />);
