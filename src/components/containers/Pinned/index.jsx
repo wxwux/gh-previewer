@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useQuery } from '@apollo/client';
 
 import Card from "@ui/Card";
@@ -45,8 +45,8 @@ const Pinned = () => {
     }
   });
 
-  if (loading) return <div>loading...</div>
-  if (error) return <div>error...</div>
+  if (loading) return <Spacer>loading...</Spacer>
+  if (error) return <Spacer>{error.message}</Spacer>
 
   const items = data.organization.pinnedItems.nodes
   if (!items.length) return null;

@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery } from '@apollo/client';
 
 import { Container, Logo, Text, Title, Row, TextContainer } from "./Info.styles";
-import { Link } from "~/shared.styles";
+import { Link, Spacer } from "~/shared.styles";
 import Icon from "@ui/Icon";
 
 import {
@@ -23,22 +23,24 @@ const Info = () => {
 
   const { avatarUrl, name, location, websiteUrl } = data.organization;
   return (
-    <Container>
-      <Logo>
-        <img src={avatarUrl} alt={`${name} logo`} />
-      </Logo>
-      <Text>
-        <Title>{name}</Title>
-        <Row>
-          <Icon symbol="location" />
-          <TextContainer>{location}</TextContainer>
-        </Row>
-        <Row>
-          <Icon symbol="link" />
-          <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
-        </Row>
-      </Text>
-    </Container>
+    <Spacer>
+      <Container>
+        <Logo>
+          <img src={avatarUrl} alt={`${name} logo`} />
+        </Logo>
+        <Text>
+          <Title>{name}</Title>
+          <Row>
+            <Icon symbol="location" />
+            <TextContainer>{location}</TextContainer>
+          </Row>
+          <Row>
+            <Icon symbol="link" />
+            <TextContainer> <Link target="_blank" href={websiteUrl}>{websiteUrl}</Link> </TextContainer>
+          </Row>
+        </Text>
+      </Container>
+    </Spacer>
   )
 }
 

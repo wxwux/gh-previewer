@@ -25,8 +25,6 @@ const apolloClient = new ApolloClient({
   cache
 });
 
-console.log(apolloClient);
-
 ReactDOM.render(
   <ApolloProvider client={apolloClient}>
     <App />
