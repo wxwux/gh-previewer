@@ -10,7 +10,6 @@ Cypress.Commands.add("openDomain", () => {
 })
 
 Cypress.Commands.add("search", (searchValue) => {
-  console.log('searchValue', searchValue);
   cy.server({
     method: "POST",
   });

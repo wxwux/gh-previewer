@@ -25,11 +25,6 @@ module.exports = (env, argv) => {
     ],
   };
 
-  const css = {
-    test: /\.css$/,
-    use: ["style-loader", "css-loader", "postcss-loader"],
-  };
-
   const svg = {
     test: /\.svg$/,
     use: ['@svgr/webpack']
@@ -50,7 +45,7 @@ module.exports = (env, argv) => {
       publicPath: "/",
     },
     module: {
-      rules: [js, html, css, svg, gql],
+      rules: [js, html, svg, gql],
     },
     resolve: {
       alias: {
