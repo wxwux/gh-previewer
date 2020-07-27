@@ -65,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.div`
   width: 1080px;
-  margin: 40px auto;
+  margin: 40px auto 100px;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px 0 ${props => props.theme.borders};
