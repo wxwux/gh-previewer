@@ -38,7 +38,7 @@ const DropdownBtn = ({ list, title, onChange }) => {
 
   return (
     <Container>
-      <Display data-cy-id="filtering-btn" active={isOpened} onClick={() => setIsOpened(true)}>{title}{btnDisplayedTitle}</Display>
+      <Display data-cy-id="filtering-btn" active={isOpened} onClick={() => setIsOpened(!isOpened)}>{title}{btnDisplayedTitle}</Display>
       {isOpened &&
         <Dropdown data-cy-id="filtering-list">
           <DropList
