@@ -13,6 +13,10 @@ export const Display = styled.button`
   background: ${props => props.active ? props.theme.blue : "transparent"};
   font-size: 15px;
   color: ${props => props.active ? "#fff" : "inherit"};
+
+  &:hover {
+    background: ${props => props.active ? props.theme.blue : props.theme.hovers}
+  }
 `
 
 export const Dropdown = styled.div`
