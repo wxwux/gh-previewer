@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`finder matches snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.form
+      onSubmit={[Function]}
+    >
+      <styled.input
+        data-cy-id="finder-input"
+        onChange={[Function]}
+        placeholder="Enter the name"
+        type="text"
+        value=""
+      />
+      <styled.button
+        data-cy-id="finder-btn"
+      >
+        Send!
+      </styled.button>
+    </styled.form>
+  </styled.div>
+</styled.div>
+`;
