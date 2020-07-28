@@ -27,10 +27,19 @@ export const Color = styled.div`
 
 export const List = styled.ul`
   display: flex;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.phones}) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Item = styled.li`
   margin-right: 24px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.phones}) {
+    margin-right: 20px;
+    margin-bottom: 14px;
+  }
 
   &:last-child {
     margin-right: 0px;

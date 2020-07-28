@@ -6,6 +6,10 @@ export const theme = {
   mainBg: "#f8f8f8",
   blue: "#63A9F3",
   hovers: "#f8f8f8",
+  breakpoints: {
+    tablets: "768px",
+    phones: "560px",
+  },
 };
 
 export const GlobalStyles = createGlobalStyle`
@@ -26,7 +30,6 @@ export const GlobalStyles = createGlobalStyle`
   #root {
     position: relative;
     overflow: hidden;
-    min-width: 1100px;
     min-height: 100%;
   }
 
@@ -64,7 +67,8 @@ export const GlobalStyles = createGlobalStyle`
 }`;
 
 export const Container = styled.div`
-  width: 1080px;
+  width: 95%;
+  max-width: 1080px;
   margin: 40px auto 100px;
   background: #fff;
   border-radius: 5px;
