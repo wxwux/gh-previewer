@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "BABEL_ENV=development webpack-dev-server --open --mode development",
     "build": "BABEL_ENV=production webpack --mode production",
-    "eslint": "eslint",
+    "eslint:fix": "eslint --ext .jsx,.js src --fix",
     "test": "jest --silent",
     "cypress": "cypress open"
   },
@@ -13,7 +13,10 @@
   ],
   "dependencies": {
     "@apollo/client": "^3.0.2",
+    "@testing-library/jest-dom": "^5.11.1",
     "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "graphql": "^15.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -25,7 +28,6 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@svgr/webpack": "^5.4.0",
-    "@testing-library/jest-dom": "^5.11.1",
     "babel-eslint": "10.x",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
@@ -36,8 +38,6 @@
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.5.3",
     "cypress": "^4.11.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-react-app": "^5.2.1",

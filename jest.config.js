@@ -1,34 +1,33 @@
 module.exports = {
-  "roots": [
-    "<rootDir>/src"
+  roots: [
+    "<rootDir>/src",
   ],
-  "collectCoverageFrom": [
+  collectCoverageFrom: [
     "src/**/*.js",
-    "!src/**/*.d.ts"
+    "!src/**/*.d.ts",
   ],
-  "setupFilesAfterEnv": [
+  setupFilesAfterEnv: [
     "<rootDir>/jest/setupTests.js",
-    './node_modules/jest-enzyme/lib/index.js'
+    "./node_modules/jest-enzyme/lib/index.js",
   ],
-  "testMatch": [
+  testMatch: [
     "<rootDir>/src/**/__tests__/**/*.js",
-    "<rootDir>/src/**/*.{spec,test}.js"
+    "<rootDir>/src/**/*.{spec,test}.js",
   ],
   moduleNameMapper: {
     "^@ui(.*)$": "<rootDir>/src/components/UI/$1",
     "^~(.*)$": "<rootDir>/src/$1",
   },
-  "transform": {
+  transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-    "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
-    "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js"
+    "^(?!.*\\.(js|jsx|ts|tsx|css|json)$)": "<rootDir>/jest/fileTransform.js",
   },
-  "transformIgnorePatterns": [
+  transformIgnorePatterns: [
     "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
-    "^.+\\.module\\.(css|sass|scss)$"
+    "^.+\\.module\\.(css|sass|scss)$",
   ],
-  "modulePaths": [],
-  "moduleFileExtensions": [
+  modulePaths: [],
+  moduleFileExtensions: [
     "web.js",
     "js",
     "web.ts",
@@ -38,10 +37,10 @@ module.exports = {
     "json",
     "web.jsx",
     "jsx",
-    "node"
+    "node",
   ],
-  "watchPlugins": [
+  watchPlugins: [
     "jest-watch-typeahead/filename",
-    "jest-watch-typeahead/testname"
-  ]
+    "jest-watch-typeahead/testname",
+  ],
 };
