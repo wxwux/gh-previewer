@@ -6,7 +6,6 @@ const prodConfig = require("./webpack.config.prod")();
 
 module.exports = (env, argv) => {
   const isDev = argv.mode === "development";
-  // process.env.BABEL_ENV = argv.mode;
 
   const jsLint = {
     enforce: "pre",

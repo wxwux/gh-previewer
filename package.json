@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "BABEL_ENV=development webpack-dev-server --open --mode development",
-    "build": "webpack --mode production",
+    "build": "BABEL_ENV=production webpack --mode production",
     "eslint": "eslint",
     "test": "jest --silent",
     "cypress": "cypress open"
@@ -13,6 +13,7 @@
   ],
   "dependencies": {
     "@apollo/client": "^3.0.2",
+    "cross-env": "^7.0.2",
     "graphql": "^15.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
