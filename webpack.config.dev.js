@@ -3,7 +3,7 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 module.exports = () => {
   const esLint = {
     enforce: "pre",
-    test: /\.js$/,
+    test: /\.jsx?$/,
     exclude: /node_modules/,
     loader: "eslint-loader",
   };
