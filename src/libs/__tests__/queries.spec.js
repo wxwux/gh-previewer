@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { buildSearchQuery } from "../queries";
 
 it("generates github search query from an object", () => {

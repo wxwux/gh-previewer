@@ -1,6 +1,5 @@
 export const buildSearchQuery = (queryObj) => {
   if (!(queryObj instanceof Object)) {
-    console.warn("passed an incorrect value to buildSearchQuery function");
     return "";
   }
 

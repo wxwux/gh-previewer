@@ -8,19 +8,25 @@ import {
 const DropList = ({ list, onItemChange, currentItem }) => (
   <List>
     {
-        list.map((item) => (
-          <Item data-cy-id={item.name} active={item.name === currentItem} key={item.name}>
-            <Button onClick={() => onItemChange(item)}>
-              {item.name}
-              <Indicator>
-                <Icon symbol="check" width="10" height="10" fill="#63A9F3" />
-              </Indicator>
-            </Button>
-          </Item>
-        ))
-      }
+      list.map((item) => (
+        <Item data-cy-id={item.name} active={item.name === currentItem} key={item.name}>
+          <Button onClick={() => onItemChange(item)}>
+            {item.name}
+            <Indicator>
+              <Icon symbol="check" width="10" height="10" fill="#63A9F3" />
+            </Indicator>
+          </Button>
+        </Item>
+      ))
+    }
   </List>
 );
+
+DropList.propTypes = {
+  list: PropTypes.array,
+  onItemChange: PropTypes.func,
+  currentItem: PropTypes.string,
+};
 
 const DropdownBtn = ({ list, title, onChange }) => {
   const [choosenItemName, setChoosenItemName] = useState("");
@@ -42,13 +48,13 @@ const DropdownBtn = ({ list, title, onChange }) => {
       </Display>
       {isOpened
         && (
-        <Dropdown data-cy-id="filtering-list">
-          <DropList
-            list={list}
-            onItemChange={(item) => changeItem(item)}
-            currentItem={choosenItemName}
-          />
-        </Dropdown>
+          <Dropdown data-cy-id="filtering-list">
+            <DropList
+              list={list}
+              onItemChange={(item) => changeItem(item)}
+              currentItem={choosenItemName}
+            />
+          </Dropdown>
         )}
     </Container>
   );

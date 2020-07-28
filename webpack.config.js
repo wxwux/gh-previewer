@@ -6,7 +6,7 @@ const prodConfig = require("./webpack.config.prod")();
 
 module.exports = (env, argv) => {
   const isDev = argv.mode === "development";
-  process.env.BABEL_ENV = argv.mode;
+  // process.env.BABEL_ENV = argv.mode;
 
   const jsLint = {
     enforce: "pre",
@@ -44,7 +44,7 @@ module.exports = (env, argv) => {
   };
 
   const config = {
-    entry: "./src/index.js",
+    entry: "./src/index.jsx",
     output: {
       path: path.resolve(__dirname, "./docs"),
       filename: "[name].[hash].build.js",

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { convertDate } from "../dates";
 
 it("converts date to human format from iso-8601", () => {

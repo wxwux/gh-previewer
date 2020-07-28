@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
+import PropTypes from "prop-types";
 
 import Card from "@ui/Card";
 import Meta from "@ui/Meta";
@@ -24,18 +25,20 @@ const CardList = ({ items }) => {
             language={item.primaryLanguage}
             stars={item.stargazers.totalCount}
           />
-          )}
+        )}
       />
     </Item>
   ));
 
   return (
     <List data-cy-id="pinned-list">
-      {" "}
       {itemsList}
-      {" "}
     </List>
   );
+};
+
+CardList.propTypes = {
+  items: PropTypes.array,
 };
 
 const Pinned = () => {

@@ -2,10 +2,10 @@
   "name": "repo-previewer",
   "version": "0.1.0",
   "scripts": {
-    "dev": "webpack-dev-server --open --mode development",
+    "dev": "BABEL_ENV=development webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
     "eslint": "eslint",
-    "test": "jest",
+    "test": "jest --silent",
     "cypress": "cypress open"
   },
   "browserslist": [
@@ -14,10 +14,12 @@
   "dependencies": {
     "@apollo/client": "^3.0.2",
     "graphql": "^15.3.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^5.1.1",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "unfetch": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
@@ -38,6 +40,7 @@
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-react-app": "^5.2.1",
+    "eslint-import-resolver-webpack": "^0.12.2",
     "eslint-loader": "^4.0.2",
     "eslint-plugin-flowtype": "^5.2.0",
     "eslint-plugin-import": "^2.22.0",
@@ -57,8 +60,7 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
-    "webpack-merge": "^4.2.2",
-    "unfetch": "^4.1.0"
+    "webpack-merge": "^4.2.2"
   },
   "resolutions": {
     "styled-components": "^5"

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { shallow } from "enzyme";
 import React from "react";
 import Finder from "./index.jsx";

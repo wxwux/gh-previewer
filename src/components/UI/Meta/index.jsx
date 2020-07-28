@@ -58,7 +58,7 @@ Meta.propTypes = {
     color: PropTypes.string,
   }),
   stars: PropTypes.number,
-  forms: PropTypes.number,
+  forks: PropTypes.number,
   license: PropTypes.string,
   updatedAt: PropTypes.string,
 };

@@ -4,11 +4,11 @@ import { ApolloClient, createHttpLink, ApolloProvider } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { ACCESS_TOKEN } from "../env.json";
 import cache from "./cache";
-import App from "./App.jsx";
+import App from "./App";
 
 // cypress(e2e) can't handle fetch requests,
 if (process.env.NODE_ENV === "development") {
-  require("unfetch/polyfill");
+  require("unfetch/polyfill"); // eslint-disable-line
 }
 
 const httpLink = createHttpLink({

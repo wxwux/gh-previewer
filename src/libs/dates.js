@@ -13,7 +13,6 @@ export const convertDate = (dateISO8601) => {
   try {
     return new Intl.DateTimeFormat("en-GB", options).format(date);
   } catch (e) {
-    console.warn("convertDate", e);
     return null;
   }
 };

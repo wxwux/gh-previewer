@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { parseQLError } from "../errors";
 
 const errorData = {

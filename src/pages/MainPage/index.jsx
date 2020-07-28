@@ -5,7 +5,7 @@ import { useLazyQuery } from "@apollo/client";
 import { Spacer } from "~/shared.styles";
 
 import { mutations } from "~/operations/mutations";
-import { parseQLError } from "~/libs/errors.js";
+import { parseQLError } from "~/libs/errors";
 
 import {
   Info as ORGANIZATION_INFO_QUERY,
@@ -31,10 +31,10 @@ const MainPage = () => {
     <>
       {(!data || error)
         && (
-        <>
-          {error && <Spacer centered data-cy-id="error-message">{parseQLError(error).notFound()}</Spacer>}
-          <Finder onSubmit={(title) => getData(title)} />
-        </>
+          <>
+            {error && <Spacer centered data-cy-id="error-message">{parseQLError(error).notFound()}</Spacer>}
+            <Finder onSubmit={(title) => getData(title)} />
+          </>
         )}
       <Suspense fallback={<Spacer>Module is loading...</Spacer>}>
         {data && <MainPageContainer />}

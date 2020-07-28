@@ -1,12 +1,13 @@
-export const parseQLError = (error) => ({
-  notFound() {
-    try {
-      const errors = error.graphQLErrors[0];
-      if (errors.type === "NOT_FOUND") {
-        return errors.message;
-      }
-    } catch (e) {
-      return null;
-    }
-  },
-});
+export const parseQLError = (error) => {
+  if (!(error instanceof Object)) return null;
+  if (!error.graphQLErrors) return null;
+
+  const errorObj = error.graphQLErrors[0];
+  return {
+    notFound() {
+      return errorObj.type === "NOT_FOUND"
+        ? errorObj.message
+        : null;
+    },
+  };
+};
