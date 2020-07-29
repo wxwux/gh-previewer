@@ -36,7 +36,7 @@ const ReposList = () => {
 
   const items = data.search.nodes;
 
-  if (!items.length) return <Spacer>There are no repos for this filter</Spacer>;
+  if (!(items && items.length)) return <Spacer>There are no repos for this filter</Spacer>;
 
   const itemsList = items.map((item) => (
     <Item key={item.id}>
@@ -60,9 +60,7 @@ const ReposList = () => {
 
   return (
     <List data-cy-id="repos-list">
-      {" "}
       {itemsList}
-      {" "}
     </List>
   );
 };

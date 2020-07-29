@@ -26,28 +26,30 @@ const Info = () => {
   const {
     avatarUrl, name, location, websiteUrl,
   } = data.organization;
+
   return (
     <Spacer>
       <Container>
-        <Logo>
-          <img data-cy-id="org-avatar" src={avatarUrl} alt={`${name} logo`} />
-        </Logo>
+        {(avatarUrl && avatarUrl.length) && (
+          <Logo>
+            <img data-cy-id="org-avatar" src={avatarUrl} alt={`${name} logo`} />
+          </Logo>
+        )}
         <Text>
           <Title data-cy-id="org-name">{name}</Title>
-          {location.length > 0 && (
+
+          {(location && location.length > 0) && (
             <Row>
               <Icon symbol="location" />
               <TextContainer data-cy-id="org-location">{location}</TextContainer>
             </Row>
           )}
 
-          {location.length > 0 && (
+          {(websiteUrl && websiteUrl.length > 0) && (
             <Row>
               <Icon symbol="link" />
               <TextContainer>
-                {" "}
                 <Link target="_blank" data-cy-id="org-url" href={websiteUrl}>{websiteUrl}</Link>
-                {" "}
               </TextContainer>
             </Row>
           )}

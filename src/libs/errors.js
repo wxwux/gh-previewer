@@ -5,7 +5,7 @@ export const parseQLError = (error) => {
   const errorObj = error.graphQLErrors[0];
   return {
     notFound() {
-      return errorObj.type === "NOT_FOUND"
+      return errorObj && errorObj.type === "NOT_FOUND"
         ? errorObj.message
         : null;
     },
