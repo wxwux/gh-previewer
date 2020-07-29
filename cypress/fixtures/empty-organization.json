@@ -1,0 +1,17 @@
+{
+  "data": {
+    "organization": {
+      "avatarUrl": null,
+      "databaseId": null,
+      "location": null,
+      "name": null,
+      "websiteUrl": null,
+      "pinnedItems": {
+        "nodes": null
+      }
+    },
+    "search": {
+      "nodes": null
+    }
+  }
+}

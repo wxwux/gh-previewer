@@ -17,9 +17,8 @@ class ErrorBoundary extends React.Component {
     if (hasError) {
       return (
         <>
-          <h1>Unknown error has occured</h1>
+          <h1 data-cy-id="error-boundary">Unknown error has occured</h1>
           <h2>task failed successfully</h2>
-          ;
         </>
       );
     }
