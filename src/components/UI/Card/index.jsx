@@ -13,10 +13,11 @@ const Card = ({
       <Title>{name}</Title>
       {fork
           && (
-          <ForkedFrom>
-            Forked from
-            <Link target="_blank" href={fork.url}>{fork.nameWithOwner}</Link>
-          </ForkedFrom>
+            <ForkedFrom>
+              Forked from
+              {" "}
+              <Link target="_blank" href={fork.url}>{fork.nameWithOwner}</Link>
+            </ForkedFrom>
           )}
     </Header>
     <Description>{description}</Description>

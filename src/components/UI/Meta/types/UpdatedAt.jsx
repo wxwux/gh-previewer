@@ -6,6 +6,7 @@ const UpdatedAt = ({ date }) => (
   <Container>
     <Text>
       Updated on
+      {" "}
       {date}
     </Text>
   </Container>

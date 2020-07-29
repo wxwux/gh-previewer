@@ -36,7 +36,7 @@ const Meta = ({
         </Item>
         )}
 
-    {(license && license.length > 0)
+    {(license && license.length > 0 && license !== "NOASSERTION")
         && (
         <Item>
           <License license={license} />
