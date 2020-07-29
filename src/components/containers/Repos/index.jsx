@@ -51,7 +51,7 @@ const ReposList = () => {
             stars={item.stargazers.totalCount}
             forks={item.forkCount}
             license={item.licenseInfo && item.licenseInfo.spdxId}
-            updatedAt={convertDate(item.updatedAt)}
+            updatedAt={convertDate(item.pushedAt)}
           />
           )}
       />

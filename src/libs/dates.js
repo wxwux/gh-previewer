@@ -5,7 +5,7 @@ export const convertDate = (dateISO8601) => {
   const currentYear = new Date().getFullYear();
 
   const options = {
-    day: "2-digit",
+    day: "numeric",
     month: "short",
     year: currentYear === date.getFullYear() ? undefined : "numeric",
   };

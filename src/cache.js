@@ -4,6 +4,7 @@ const initialState = {
   organization: "",
   searchQuery: {
     fork: true,
+    sort: "updated-desc",
   },
 };
 

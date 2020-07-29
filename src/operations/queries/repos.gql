@@ -29,7 +29,7 @@ query Search ($query: String!) {
   	nodes {
       ... on Repository {
         ...DefaultData,
-        updatedAt,
+        pushedAt,
         isFork,
         isArchived,
         isMirror,
